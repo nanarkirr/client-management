@@ -60,4 +60,8 @@ body {
     justify-content: space-between;
 
   }
+
+  .error{
+    color: red;
+  }
   

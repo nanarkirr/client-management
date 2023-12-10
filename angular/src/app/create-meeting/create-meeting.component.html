@@ -4,21 +4,30 @@
       <button routerLink="/meeting-list">Go to Meeting List</button>
     </div>
     <p>Please fill in this form to create a meeting schedule.</p>
-  
+ 
     <form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="topic">Meeting Topic:</label>
         <input type="text" id="topic" formControlName="topic" required>
+        <div class="error" *ngIf="meetingForm.get('topic').hasError('required') && meetingForm.get('topic').touched">
+          Meeting Topic is required.
+        </div>
       </div>
   
       <div class="form-group">
         <label for="numberOfPeople">Number of People:</label>
         <input type="number" id="numberOfPeople" formControlName="numberOfPeople" required>
+        <div class="error" *ngIf="meetingForm.get('numberOfPeople').hasError('required') && meetingForm.get('numberOfPeople').touched">
+          Number of People is required.
+        </div>
       </div>
   
       <div class="form-group">
         <label for="startTime">Start Time:</label>
         <input type="datetime-local" id="startTime" formControlName="startTime" required>
+        <div class="error" *ngIf="meetingForm.get('startTime').hasError('required') && meetingForm.get('startTime').touched">
+          Start Time is required.
+        </div>
       </div>
   
       <button type="submit">Create Schedule</button>
