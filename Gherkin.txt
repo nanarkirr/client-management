@@ -1,0 +1,39 @@
+Feature: Client Management
+
+Scenario 1: Create a New Client
+  Given the user is on the "Create Client" page
+  When the user fills in the client details with:
+    | Name          | Email             | Address         |
+    | John Doe      | john@example.com  | 123 Main St     |
+  And the user clicks the "Submit" button
+  Then the new client should be added to the client list
+  And the user should be redirected to the "Client List" page
+
+Scenario 2: View Client Details
+  Given the user is on the "Client List" page
+  When the user clicks on the details of a specific client
+  Then the user should be redirected to the "Client Details" page
+  And the user should see detailed information about the selected client
+
+
+--------------------------------------------------------------------------
+
+Feature: Meeting Management
+
+Scenario 1: Schedule a New Meeting
+  Given the user is on the "Create Meeting" page
+  When the user fills in the meeting details with:
+    | Topic             | Number of People  | Start Time               |
+    | Project Kickoff   | 10                | 2023-01-01T09:00:00     |
+  And the user clicks the "Submit" button
+  Then the new meeting should be added to the meeting list
+  And the user should be redirected to the "Meeting List" page
+
+Scenario 2: View Meeting Details
+  Given the user is on the "Meeting List" page
+  When the user clicks on the details of a specific meeting
+  Then the user should be redirected to the "Meeting Details" page
+  And the user should see detailed information about the selected meeting
+
+
+
