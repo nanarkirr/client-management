@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="header">
+      <h4>Create a meeting schedule</h4>
+      <button routerLink="/meeting-list">Go to Meeting List</button>
+    </div>
+    <p>Please fill in this form to create a meeting schedule.</p>
+  
+    <form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="topic">Meeting Topic:</label>
+        <input type="text" id="topic" formControlName="topic" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="numberOfPeople">Number of People:</label>
+        <input type="number" id="numberOfPeople" formControlName="numberOfPeople" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="startTime">Start Time:</label>
+        <input type="datetime-local" id="startTime" formControlName="startTime" required>
+      </div>
+  
+      <button type="submit">Create Schedule</button>
+    </form>
+
+  </div>
+  
